@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #canvas1 {
+                background-color: #001E62;
+            }
+            #canvas2 {
+                background-color: purple;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <canvas id = "canvas1" width = "500px" height = "300px">
+            Your browser does not support Canvas elements.
+        </canvas>
+        <canvas id = "canvas2" width = "500px" height = "300px">
+            Your browser does not support Canvas elements.
+        </canvas>
+        
+      <div id="divX"></div>
+      
+      <script>
+        var canvas = document.getElementById("canvas1");
+        var canvas2 = document.getElementById("canvas2");
+        var ctx = canvas.getContext("2d");
+        var ctx2 = canvas2.getContext("2d");
+        var divX = document.getElementById("divX");  // to show the circleX val
+        var circle = 250;
+        var circleX = 250;
+        var moveInc = 1;
+        var circleY = 150;
+        
+        function draw() {
+          clearRectangle();
+          drawCircleStuff();
+       }
+       
+       function clearRectangle( )
+       {
+           ctx.clearRect(0,0,canvas.width,canvas.height);
+       }
+       
+       function drawCircleStuff()
+       {
+          ctx.beginPath();                       
+          ctx.fillStyle = " #D50032";
+          ctx.arc(circle, 150,100,0, Math.PI *2);            // set points for an arc
+          ctx.fill();   
+          
+          //drawing text, making white, centering
+          ctx.font = "100px Helvetica";
+          ctx.fillStyle = "White";
+          ctx.fillText("UIC",165,190);// fill the arc
+       }
+       
+        requestAnimationFrame(draw);
+        
+        $( document ).keydown( function( event )
+        {
+            if( event.which == 88 )
+            {
+                requestAnimationFrame( clearRectangle );
+            }
+            else if( event.which == 85 )
+            {
+                requestAnimationFrame( drawCircleStuff );
+            }
+        });
+        
+        function drawCircle(){
+          ctx2.clearRect(0,0,canvas.width,canvas.height);    // clear the canvas
+          circleX += moveInc;   // increment the x position
+          
+          if((circleX >= 475 && moveInc == 1 ) || (circleX <= 25 && moveInc == -1 ))
+            moveInc *= -1;
+                
+          divX.innerText = "circleX = " + circleX;          // show the circleX value
+          ctx2.beginPath();                                  // clear old path points
+          ctx2.arc(circleX, circleY,25,0, Math.PI *2);            // set points for an arc
+          ctx2.fill();                                       // fill the arc
+          requestAnimationFrame(drawCircle);                      // call method again at next frame (FPS=60)
+       }
+        
+        requestAnimationFrame(drawCircle);
+        
+        $( document).keydown(function(event){
+            if(event.which == 38){
+                circleY -= 1;
+            }
+            if(event.which == 40){
+                circleY += 1;
+            }
+        });
+        
+      </script>
+    </body>
+</html>
