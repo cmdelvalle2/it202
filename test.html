@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cassie Del Valle - Project 3</title>
+        <style>
+        #game{
+            background-color: purple;
+        }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    </head>
+    <body>
+        
+        <div id="divX"></div>
+        
+        <canvas id = "game" width = "500px" height = "500px">
+            Your Browser does not support Canvas elements.
+        </canvas>
+        <script>
+            var canvas = document.getElementById("game");
+            var ctx2 = canvas.getContext("2d");
+            var divX = document.getElementById("divX");
+            var circleX = 535;
+            var circleY = 30;
+            var squareY = 250;
+            var squareY2 = 100;
+            var squareX = 535;
+            var moveInc = 1;
+            var points = 0;
+            var lives = 3;
+
+            
+          function benefit()
+          {
+              ctx2.clearRect(0,0,canvas.width,canvas.height);    // clear the canvas
+              circleX += moveInc;   // increment the x position
+              
+              if((circleX >= 525 && moveInc == 1 ))
+              {
+                moveInc *= -3;
+              }
+              
+              if (circleX <= -30)
+              {
+                circleX = 525;
+                circleY = Math.floor((Math.random() * 500) + 1); 
+              }
+                    
+              ctx2.fillStyle = "#7FFF00";
+              ctx2.beginPath();                                  // clear old path points
+              ctx2.arc(circleX, circleY,15,0, Math.PI *2);            // set points for an arc
+              ctx2.fill();                                       // fill the arc
+              requestAnimationFrame(benefit);                      // call method again at next frame (FPS=60)
+            }
+        
+             requestAnimationFrame(benefit);
+           
+           function harm()
+           {
+              squareX += moveInc; 
+               
+              if((squareX >= 525 && moveInc == 1 ))
+              {
+                moveInc *= -3; //make speed random later
+              }
+              
+              if (squareX <= -30)
+              {
+                squareX = 525;
+                squareY2 = Math.floor((Math.random() * 500) + 1); 
+              }
+              
+               ctx2.beginPath();
+               ctx2.fillStyle = "#FF0000";
+               ctx2.rect(squareX, squareY2, 30, 30);
+               ctx2.stroke();
+               ctx2.fill();
+               requestAnimationFrame(harm);
+           }   
+           
+           requestAnimationFrame(harm);
+           
+           function drawCharacter()
+           {
+               ctx2.beginPath();
+               ctx2.fillStyle = "White";
+               ctx2.rect(20,squareY,30,30);
+               ctx2.stroke();
+               ctx2.fill();
+               requestAnimationFrame(drawCharacter);   
+           }
+           
+           requestAnimationFrame(drawCharacter);
+           
+           $( document).keydown(function(event){
+                if(event.which == 38)
+                {
+                    squareY -= 20;
+                }
+                if(event.which == 40)
+                {
+                    squareY += 20;
+                }
+            });
+            
+            
+        </script>
+    </body>
+</html>

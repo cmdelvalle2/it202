@@ -1,0 +1,125 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /home/ubuntu/.nvm/versions/node/v4.6.1/bin/node /home/ubuntu/.nvm/versions/node/v4.6.1/bin/firebase use --add
+[debug] CLI Version:  3.3.0
+[debug] Platform:     linux
+[debug] Node Version: v4.6.1
+[debug] Time:         Mon Feb 20 2017 23:05:07 GMT+0000 (UTC)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
+ Mon Feb 20 2017 23:05:07 GMT+0000 (UTC)
+[debug] <<< HTTP RESPONSE 200
+[debug] TypeError: Cannot read property 'short' of undefined
+    at Prompt.render (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/lib/prompts/list.js:94:69)
+    at Prompt.onSubmit (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/lib/prompts/list.js:116:8)
+    at AnonymousObserver.Rx.AnonymousObserver.AnonymousObserver.next (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1535:12)
+    at AnonymousObserver.Rx.internals.AbstractObserver.AbstractObserver.onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1469:31)
+    at AnonymousObserver.tryCatcher (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:63:31)
+    at AutoDetachObserverPrototype.next (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:5782:51)
+    at AutoDetachObserver.Rx.internals.AbstractObserver.AbstractObserver.onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1469:31)
+    at AnonymousObserver._onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:4234:13)
+    at AnonymousObserver.Rx.AnonymousObserver.AnonymousObserver.next (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1535:12)
+    at AnonymousObserver.Rx.internals.AbstractObserver.AbstractObserver.onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1469:31)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /home/ubuntu/.nvm/versions/node/v4.6.1/bin/node /home/ubuntu/.nvm/versions/node/v4.6.1/bin/firebase use --add
+[debug] CLI Version:  3.3.0
+[debug] Platform:     linux
+[debug] Node Version: v4.6.1
+[debug] Time:         Mon Feb 20 2017 23:05:25 GMT+0000 (UTC)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
+ Mon Feb 20 2017 23:05:25 GMT+0000 (UTC)
+[debug] <<< HTTP RESPONSE 200
+[debug] TypeError: Cannot read property 'short' of undefined
+    at Prompt.render (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/lib/prompts/list.js:94:69)
+    at Prompt.onSubmit (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/lib/prompts/list.js:116:8)
+    at AnonymousObserver.Rx.AnonymousObserver.AnonymousObserver.next (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1535:12)
+    at AnonymousObserver.Rx.internals.AbstractObserver.AbstractObserver.onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1469:31)
+    at AnonymousObserver.tryCatcher (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:63:31)
+    at AutoDetachObserverPrototype.next (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:5782:51)
+    at AutoDetachObserver.Rx.internals.AbstractObserver.AbstractObserver.onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1469:31)
+    at AnonymousObserver._onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:4234:13)
+    at AnonymousObserver.Rx.AnonymousObserver.AnonymousObserver.next (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1535:12)
+    at AnonymousObserver.Rx.internals.AbstractObserver.AbstractObserver.onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1469:31)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /home/ubuntu/.nvm/versions/node/v4.6.1/bin/node /home/ubuntu/.nvm/versions/node/v4.6.1/bin/firebase use --add
+[debug] CLI Version:  3.3.0
+[debug] Platform:     linux
+[debug] Node Version: v4.6.1
+[debug] Time:         Mon Feb 20 2017 23:05:54 GMT+0000 (UTC)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
+ Mon Feb 20 2017 23:05:54 GMT+0000 (UTC)
+[debug] <<< HTTP RESPONSE 200
+[debug] TypeError: Cannot read property 'short' of undefined
+    at Prompt.render (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/lib/prompts/list.js:94:69)
+    at Prompt.onSubmit (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/lib/prompts/list.js:116:8)
+    at AnonymousObserver.Rx.AnonymousObserver.AnonymousObserver.next (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1535:12)
+    at AnonymousObserver.Rx.internals.AbstractObserver.AbstractObserver.onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1469:31)
+    at AnonymousObserver.tryCatcher (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:63:31)
+    at AutoDetachObserverPrototype.next (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:5782:51)
+    at AutoDetachObserver.Rx.internals.AbstractObserver.AbstractObserver.onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1469:31)
+    at AnonymousObserver._onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:4234:13)
+    at AnonymousObserver.Rx.AnonymousObserver.AnonymousObserver.next (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1535:12)
+    at AnonymousObserver.Rx.internals.AbstractObserver.AbstractObserver.onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1469:31)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /home/ubuntu/.nvm/versions/node/v4.6.1/bin/node /home/ubuntu/.nvm/versions/node/v4.6.1/bin/firebase use --add
+[debug] CLI Version:  3.3.0
+[debug] Platform:     linux
+[debug] Node Version: v4.6.1
+[debug] Time:         Mon Feb 20 2017 23:06:06 GMT+0000 (UTC)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
+ Mon Feb 20 2017 23:06:06 GMT+0000 (UTC)
+[debug] <<< HTTP RESPONSE 200
+[debug] TypeError: Cannot read property 'short' of undefined
+    at Prompt.render (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/lib/prompts/list.js:94:69)
+    at Prompt.onSubmit (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/lib/prompts/list.js:116:8)
+    at AnonymousObserver.Rx.AnonymousObserver.AnonymousObserver.next (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1535:12)
+    at AnonymousObserver.Rx.internals.AbstractObserver.AbstractObserver.onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1469:31)
+    at AnonymousObserver.tryCatcher (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:63:31)
+    at AutoDetachObserverPrototype.next (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:5782:51)
+    at AutoDetachObserver.Rx.internals.AbstractObserver.AbstractObserver.onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1469:31)
+    at AnonymousObserver._onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:4234:13)
+    at AnonymousObserver.Rx.AnonymousObserver.AnonymousObserver.next (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1535:12)
+    at AnonymousObserver.Rx.internals.AbstractObserver.AbstractObserver.onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1469:31)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /home/ubuntu/.nvm/versions/node/v4.6.1/bin/node /home/ubuntu/.nvm/versions/node/v4.6.1/bin/firebase use --add
+[debug] CLI Version:  3.3.0
+[debug] Platform:     linux
+[debug] Node Version: v4.6.1
+[debug] Time:         Mon Feb 20 2017 23:07:07 GMT+0000 (UTC)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
+ Mon Feb 20 2017 23:07:07 GMT+0000 (UTC)
+[debug] <<< HTTP RESPONSE 200
+[debug] TypeError: Cannot read property 'short' of undefined
+    at Prompt.render (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/lib/prompts/list.js:94:69)
+    at Prompt.onSubmit (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/lib/prompts/list.js:116:8)
+    at AnonymousObserver.Rx.AnonymousObserver.AnonymousObserver.next (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1535:12)
+    at AnonymousObserver.Rx.internals.AbstractObserver.AbstractObserver.onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1469:31)
+    at AnonymousObserver.tryCatcher (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:63:31)
+    at AutoDetachObserverPrototype.next (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:5782:51)
+    at AutoDetachObserver.Rx.internals.AbstractObserver.AbstractObserver.onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1469:31)
+    at AnonymousObserver._onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:4234:13)
+    at AnonymousObserver.Rx.AnonymousObserver.AnonymousObserver.next (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1535:12)
+    at AnonymousObserver.Rx.internals.AbstractObserver.AbstractObserver.onNext (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/firebase-tools/node_modules/inquirer/node_modules/rx-lite/rx.lite.js:1469:31)
+[error] 
+[error] Error: An unexpected error has occurred.

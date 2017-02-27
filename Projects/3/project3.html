@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cassie Del Valle - Project 3</title>
+        <style>
+        #game{
+            background-color: purple;
+        }
+        #welcome{
+            background-color: black;
+        }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    </head>
+    <body>
+        
+        <div id="divX"></div>
+        
+        <canvas id = "game" width = "500px" height = "500px">
+            Your Browser does not support Canvas elements.
+        </canvas>
+        <canvas id = "welcome" width = "500px" height = "500px">
+            Your browser does not support Canvas elements.
+        </canvas>
+        <script>
+            var canvas = document.getElementById("game");
+            var canvas2 = document.getElementById("welcome");
+            var ctx2 = canvas.getContext("2d");
+            var ctx3 = canvas2.getContext("2d");
+            var divX = document.getElementById("divX");
+            var circleX = 535;
+            var circleY = 30;
+            var squareY = 250;
+            var squareY2 = 100;
+            var squareX = 535;
+            var moveInc = 1;
+            var points = 0;
+            var lives = 3;
+            
+            // hide the game canvas until click
+            canvas.style.display="none";
+            
+            //hide welcome screen when clicked, display game canvas
+            canvas2.addEventListener('click', function(event){
+              canvas2.style.display = "none";
+              canvas.style.display = "block";
+              requestAnimationFrame(drawGame);
+            });
+            
+            //welcome screen canvas
+            function drawWelcome(){
+                ctx3.beginPath();
+                ctx3.font = " 35px Helvetica";
+                ctx3.fillStyle = "White";
+                ctx3.fillText("Simple Scrolling Game", 70, 150);
+                ctx3.font = "30px Helvetica";
+                ctx3.fillStyle = "Green";
+                ctx3.fillText("Green Objects Increase Score", 50, 200);
+                ctx3.fillStyle = "Red";
+                ctx3.fillText("Red Objects Decrease Lives", 60, 250);
+                ctx3.fillStyle = "White";
+                ctx3.fillText("Controls: UP and DOWN Arrow Keys", 5, 300);
+                ctx3.fillText("Click to Start Game", 115, 400);
+            }
+            requestAnimationFrame(drawWelcome);
+            
+        function drawGame(){  
+            
+            divX.innerText = "Lives = " + lives;
+            divX.innerText = "Score = " + points;
+            
+          function benefit()
+          {
+              ctx2.clearRect(0,0,canvas.width,canvas.height);    // clear the canvas
+              circleX += moveInc;   // increment the x position
+              
+              if((circleX >= 525 && moveInc == 1 ))
+              {
+                moveInc *= -3;
+              }
+              
+              if (circleX <= -30)
+              {
+                circleX = 525;
+                circleY = Math.floor((Math.random() * 500) + 1); 
+              }
+              
+              
+                    
+              ctx2.fillStyle = "#7FFF00";
+              ctx2.beginPath();                                  // clear old path points
+              ctx2.arc(circleX, circleY,15,0, Math.PI *2);            // set points for an arc
+              ctx2.fill();                                       // fill the arc
+              requestAnimationFrame(benefit);                      // call method again at next frame (FPS=60)
+            }
+        
+             requestAnimationFrame(benefit);
+           
+           function harm()
+           {
+              squareX += moveInc; 
+               
+              if((squareX >= 525 && moveInc == 1 ))
+              {
+                moveInc *= -3; //make speed random later
+              }
+              
+              if (squareX <= -30)
+              {
+                squareX = 525;
+                squareY2 = Math.floor((Math.random() * 500) + 1); 
+              }
+              
+               ctx2.beginPath();
+               ctx2.fillStyle = "#FF0000";
+               ctx2.rect(squareX, squareY2, 30, 30);
+               ctx2.stroke();
+               ctx2.fill();
+               requestAnimationFrame(harm);
+           }   
+           
+           requestAnimationFrame(harm);
+           
+           function drawCharacter()
+           {
+               ctx2.beginPath();
+               ctx2.fillStyle = "White";
+               ctx2.rect(20,squareY,30,30);
+               ctx2.stroke();
+               ctx2.fill();
+               
+               
+               
+               requestAnimationFrame(drawCharacter);   
+           }
+           
+           requestAnimationFrame(drawCharacter);
+          
+           
+           $( document).keydown(function(event){
+                if(event.which == 38)
+                {
+                    squareY -= 20;
+                }
+                if(event.which == 40)
+                {
+                    squareY += 20;
+                }
+            });
+            
+        }
+        
+            
+        
+        function doesCollide(shape1, dimension1, shape2, dimension2)
+           {
+               if(shape1.x < shape2.x + shape2.width && 
+                  shape1.x + shape1.width > shape2.x &&
+                  shape1.y < shape2.y + shape2.height &&
+                  shape1.height + shape1.y > shape2.y )
+               {
+                   //decrement lives if harm
+                   //increase score if benefit
+               }
+           }
+        </script>
+    </body>
+</html>
