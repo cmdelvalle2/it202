@@ -9,6 +9,9 @@
         #welcome{
             background-color: black;
         }
+        #gameover{
+            background-color: black;
+        }
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     </head>
@@ -22,23 +25,36 @@
         <canvas id = "welcome" width = "500px" height = "500px">
             Your browser does not support Canvas elements.
         </canvas>
+        <canvas id = "gameover" width = "500px" height = "500px">
+            Your browser does not support Canvas elements.
+        </canvas>
         <script>
             var canvas = document.getElementById("game");
             var canvas2 = document.getElementById("welcome");
+            var canvas3 = document.getElementById("gameover");
             var ctx2 = canvas.getContext("2d");
             var ctx3 = canvas2.getContext("2d");
+            var ctx4 = canvas3.getContext("2d");
             var divX = document.getElementById("divX");
-            var circleX = 535;
-            var circleY = 30;
+            var benefitX = 535;
+            var benefitY = 30;
             var squareY = 250;
             var squareY2 = 100;
             var squareX = 535;
+            var squareX2 = 20;
             var moveInc = 1;
             var points = 0;
             var lives = 3;
+            var playerWidth = 30;
+            var playerHeight = 30;
+            var harmWidth = 30;
+            var harmHeight = 30;
+            var benefitWidth = 30;
+            var benefitHeight = 30;
             
             // hide the game canvas until click
             canvas.style.display="none";
+            canvas3.style.display="none";
             
             //hide welcome screen when clicked, display game canvas
             canvas2.addEventListener('click', function(event){
@@ -46,6 +62,13 @@
               canvas.style.display = "block";
               requestAnimationFrame(drawGame);
             });
+            
+            //hide end game screen, replay game
+            canvas3.addEventListener('click', function(event)
+                {
+                   canvas3.style.display = "none";
+                   canvas.style.display = "block";
+                });
             
             //welcome screen canvas
             function drawWelcome(){
@@ -64,37 +87,49 @@
             }
             requestAnimationFrame(drawWelcome);
             
+            function drawEnd()
+            {
+                ctx4.beginPath();
+                ctx4.font = "35px Helvetica";
+                ctx4.fillStyle = "White";
+                ctx4.fillText("Game Over", 150, 150);
+                ctx4.fillText("Click to Restart", 125, 250);
+                
+            }
+            requestAnimationFrame(drawEnd);
+            
         function drawGame(){  
             
-            divX.innerText = "Lives = " + lives;
-            divX.innerText = "Score = " + points;
             
           function benefit()
           {
               ctx2.clearRect(0,0,canvas.width,canvas.height);    // clear the canvas
-              circleX += moveInc;   // increment the x position
+              benefitX += moveInc;   // increment the x position
               
-              if((circleX >= 525 && moveInc == 1 ))
+              if((benefitX >= 525 && moveInc == 1 ))
               {
                 moveInc *= -3;
               }
               
-              if (circleX <= -30)
+              if (benefitX <= -30)
               {
-                circleX = 525;
-                circleY = Math.floor((Math.random() * 500) + 1); 
+                benefitX = 525;
+                benefitY = Math.floor((Math.random() * 500) + 1); 
               }
               
               
                     
               ctx2.fillStyle = "#7FFF00";
               ctx2.beginPath();                                  // clear old path points
-              ctx2.arc(circleX, circleY,15,0, Math.PI *2);            // set points for an arc
+              ctx2.rect(benefitX, benefitY, benefitWidth, benefitHeight);            // set points for an arc
+              ctx2.stroke();
               ctx2.fill();                                       // fill the arc
               requestAnimationFrame(benefit);                      // call method again at next frame (FPS=60)
             }
         
              requestAnimationFrame(benefit);
+             
+             
            
            function harm()
            {
@@ -113,7 +148,7 @@
               
                ctx2.beginPath();
                ctx2.fillStyle = "#FF0000";
-               ctx2.rect(squareX, squareY2, 30, 30);
+               ctx2.rect(squareX, squareY2, harmWidth, harmHeight);
                ctx2.stroke();
                ctx2.fill();
                requestAnimationFrame(harm);
@@ -125,10 +160,23 @@
            {
                ctx2.beginPath();
                ctx2.fillStyle = "White";
-               ctx2.rect(20,squareY,30,30);
+               ctx2.rect(squareX2,squareY, playerWidth, playerHeight);
                ctx2.stroke();
                ctx2.fill();
                
+               ctx2.font = "20px Helvetica"
+               ctx2.fillStyle = "White";
+               ctx2.fillText("Lives: " + lives, 10, 20);
+               ctx2.fillText("Score: " + points, 100, 20);
+               
+               doesCollideHarm();
+               doesCollideBenefit();
+               
+               if (lives < 1){
+                   canvas.style.display = "none";
+                   canvas3.style.display = "block";
+                   lives = 3;
+               }
                
                
                requestAnimationFrame(drawCharacter);   
@@ -136,6 +184,7 @@
            
            requestAnimationFrame(drawCharacter);
           
+        
            
            $( document).keydown(function(event){
                 if(event.which == 38)
@@ -150,18 +199,30 @@
             
         }
         
-            
-        
-        function doesCollide(shape1, dimension1, shape2, dimension2)
+        function doesCollideHarm()
            {
-               if(shape1.x < shape2.x + shape2.width && 
-                  shape1.x + shape1.width > shape2.x &&
-                  shape1.y < shape2.y + shape2.height &&
-                  shape1.height + shape1.y > shape2.y )
-               {
-                   //decrement lives if harm
-                   //increase score if benefit
-               }
+               if(squareX2 < squareX + 30 && 
+                  squareX2 + 30 > squareX &&
+                  squareY < squareY2 + 30 &&
+                  30 + squareY > squareY2 )
+                   {
+                    squareX = 525;
+                    squareY2 = Math.floor((Math.random() * 500) + 1);
+                    lives -= 1;
+                   }
+           }
+           
+           function doesCollideBenefit()
+           {
+               if(squareX2 < benefitX + 30 && 
+                  squareX2 + 30 > benefitX &&
+                  squareY < benefitY + 30 &&
+                  30 + squareY > benefitY )
+                   {
+                    benefitX = 525;
+                    benefitY = Math.floor((Math.random() * 500) + 1);
+                    points += 1;
+                   }
            }
         </script>
     </body>
