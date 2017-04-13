@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <input type="file" accept="image/*" capture="camera" id="camera">
+<img id="frame">
+<video id="player" controls autoplay></video>
+<script>  
+  var player = document.getElementById('player');
+
+  var handleSuccess = function(stream) {
+    player.srcObject = stream;
+  };
+
+  navigator.mediaDevices.getUserMedia({video: true})
+      .then(handleSuccess);
+</script>
+        
+    </body>
+    
+    
+</html>
